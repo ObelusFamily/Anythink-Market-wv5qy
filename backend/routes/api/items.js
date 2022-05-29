@@ -79,6 +79,7 @@ router.get("/", auth.optional, function(req, res, next) {
         query.title =  {"$regex": title, "$options": "i" } 
       }
 
+      
       return Promise.all([
         Item.find(query)
           .limit(Number(limit))
